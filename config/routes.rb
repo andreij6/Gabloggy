@@ -1,4 +1,16 @@
 Gablogger::Application.routes.draw do
+ 
+
+  
+
+
+  resources :recipes do
+    resources :steps, :shallow => true, :except => :index do
+      resources :ingredients, :shallow => true
+    end
+  end
+
+
   root :to => "welcome#index"
 
   # The priority is based upon order of creation:
