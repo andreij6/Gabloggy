@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 <%= image_tag @recipe.image_url(:thumb).to_s%>
+<h2>List of Ingredients </h2>
+<% @recipe.ingredients.each do |ingredient| %>
+	<ul>
+		<li><%= ingredient.name %> include the measures </li>
+	</ul>
+<% end%>
 <% @recipe.steps.each do |step|%>
-	<%= step.step_no%>
-	<%= step.unit%>
+	<p>Step <%= step.step_no%></p>
+	<p><%= step.unit%> field not neccessary</p>
 <% end %>
 <%= link_to 'New Step', new_recipe_step_path(@recipe)%>
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |

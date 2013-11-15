@@ -40,3 +40,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'activerecord-reputation-system', require: 'reputation_system'
