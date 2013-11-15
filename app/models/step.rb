@@ -6,6 +6,7 @@ class Step < ActiveRecord::Base
   has_many :ingredients, :dependent => :destroy
   
   belongs_to :recipe
+
   
   # Validations
   validates :step_no,   :presence => true

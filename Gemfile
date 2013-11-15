@@ -41,4 +41,4 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem 'activerecord-reputation-system', require: 'reputation_system'
+gem 'activerecord-reputation-system', require: 'reputation_system'    # http://railscasts.com/episodes/364-active-record-reputation-system?autoplay=true

@@ -3,7 +3,8 @@ class Recipe < ActiveRecord::Base
   
   has_many :steps, :dependent => :destroy
   has_many :ingredients, :through => :steps
-  
+  #has_reputation  finish this after u create a user model
+    
   mount_uploader :image, ImageUploader
   
   validates :title,       :presence => true,
