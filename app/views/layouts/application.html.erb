@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gablogger</title>
+  <%= stylesheet_link_tag    "bootstrap.css","codrops.css","normalize.css","icons.css","timeline.css","custom.css", :media => "all" %>
+  <%= javascript_include_tag "jquery.js","bootstrap.js" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+	<nav id="bt-menu" class="bt-menu">
+				<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+				<ul>
+					<li><a href="#" class="bt-icon icon-user-outline">About</a></li>
+					<li><a href="#" class="bt-icon icon-sun">Skills</a></li>
+					<li><a href="#" class="bt-icon icon-windows">Work</a></li>
+					<li><%= link_to 'Blog', '#', :class => "bt-icon icon-speaker"%></li>
+					<li><a href="#" class="bt-icon icon-star">Clients</a></li>
+					<li><a href="#" class="bt-icon icon-bubble">Contact</a></li>
+				</ul>
+			</nav>
+	<div>
+		<hgroup class="jumbotron">
+			<div class="container">
+				<h1>Gablogger, Inc.</h1>
+				<h3>This blog will change our lives and yours too</h3>
+			</div>
+		</hgroup>
+	</div>
+	<nav class="row">
+			<ul class="nav nav-tabs nav-justified">
+			  <li class="active"><a href="#">Cooking</a></li>
+			  <li><a href="#">Tech</a></li>
+			  <li><a href="#">Sports</a></li>
+			  <li><a href="#">Fitness</a></li>
+			  <li><a href="#">Farting</a></li>
+			</ul>
+		</nav>
+	<div class="container">
+		
+		<ol class="breadcrumb">
+		  <li><a href="#">Home</a></li>
+		  <li><a href="#">Library</a></li>
+		  <li class="active">Data</li>
+		</ol>
+		<%= yield %>
+	</div>
+
+</body>
+<%= javascript_include_tag "codrops.js","classie.js" %>
+</html>
