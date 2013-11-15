@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+	<h1></h1>
 	<%= image_tag @recipe.image_url(:thumb).to_s%>
 	<h2>List of Ingredients </h2>
 	<% @recipe.ingredients.each do |ingredient| %>
@@ -7,10 +8,11 @@
 		</ul>
 	<% end%>
 	<% @recipe.steps.each do |step|%>
-		<p>Step <%= step.step_no%></p>
-		<p><%= step.unit %> field not neccessary</p>
+		<p> Step <%= step.step_no %> </p>
+		<p><%= step.description %></p>
+		<%= link_to  "Add New Ingredient to Step", new_step_ingredient_path(step)%><br />
 	<% end %>
-	<%= link_to 'New Step', new_recipe_step_path(@recipe)%>
+	<%= link_to 'New Step', new_recipe_step_path(@recipe)%><br />
 	<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 	<%= link_to 'Back', recipes_path %>
 

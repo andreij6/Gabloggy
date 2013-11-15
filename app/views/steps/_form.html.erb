@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-	<%= f.association :recipe, :include_blank => false %>
+	
 	<%= f.input :step_no, collection: 1..20, prompt: "Select the Step Number"%>
 	<%= f.input :unit%>
 	<%= f.input :quantity%>

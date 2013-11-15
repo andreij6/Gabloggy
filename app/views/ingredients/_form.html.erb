@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <%= f.association :recipe%>
+  <%= f.association :recipe, :default => @step.recipe%>
   <%= f.input :name%>
 
   <div class="actions">
