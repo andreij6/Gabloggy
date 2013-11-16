@@ -4,13 +4,22 @@ Gablogger::Application.routes.draw do
   
 
 
+  resources :current_events, :path => "events"
+
+
+  resources :teches, :path => "tech"
+
+
+  resources :fitnesses, :path => "fitness"
+  
+
   resources :recipes do
     resources :steps, :shallow => true, :except => :index do
       resources :ingredients, :shallow => true
     end
   end
 
-
+  
   root :to => "welcome#index"
 
   # The priority is based upon order of creation:

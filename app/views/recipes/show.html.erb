@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 	<h1></h1>
 	<%= image_tag @recipe.image_url(:thumb).to_s%>
+	<%= @recipe.description %>
 	<h2>List of Ingredients </h2>
 	<% @recipe.ingredients.each do |ingredient| %>
 		<ul>
@@ -13,6 +14,7 @@
 		<%= link_to  "Add New Ingredient to Step", new_step_ingredient_path(step)%><br />
 	<% end %>
 	<%= link_to 'New Step', new_recipe_step_path(@recipe)%><br />
-	<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+	<%= link_to 'Edit', edit_recipe_path(@recipe) %>	|
+    <%= button_to "destroy", @recipe, :method => :delete %>  |
 	<%= link_to 'Back', recipes_path %>
 

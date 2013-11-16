@@ -8,11 +8,14 @@
 	/*text-align: center;*/
 	background: #c0392b;
 	color: #ecf0f1;
+	margin-bottom: 0px;
+	
 }
 
 .jumbotron h1 {
 	font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
 	font-size: 4em;
+	
 }
 
 .jumbotron .container {
@@ -36,3 +39,4 @@ header h1 {
 	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 	font-size: 3em;
 }
+

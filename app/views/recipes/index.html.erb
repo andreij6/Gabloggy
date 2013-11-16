@@ -4,9 +4,9 @@
 <% @recipes.each do |recipe| %>
  
     <h2><%= link_to recipe.title, recipe %></h2><br/>
+    <%= recipe.description %>
     <%= image_tag recipe.image_url(:thumb).to_s%>
-    <%= link_to 'Edit', edit_recipe_path(recipe) %>
-    <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+    
   
 <% end %>
 

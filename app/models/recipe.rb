@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :title, :recipe_id, :image, :remote_image_url
+  attr_accessible :title, :recipe_id, :image, :remote_image_url, :description
   
   has_many :steps, :dependent => :destroy
   has_many :ingredients, :through => :steps
