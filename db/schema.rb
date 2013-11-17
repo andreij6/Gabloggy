@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131116195324) do
+ActiveRecord::Schema.define(:version => 20131117040425) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -50,6 +50,10 @@ ActiveRecord::Schema.define(:version => 20131116195324) do
     t.integer  "ingredients_count", :default => 0
     t.string   "image"
     t.text     "description"
+    t.string   "prep_time"
+    t.string   "missed_time"
+    t.string   "total_time"
+    t.string   "video"
   end
 
   create_table "rs_evaluations", :force => true do |t|

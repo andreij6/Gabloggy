@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
-	<h1></h1>
+	<h1><%= @recipe.title%></h1>
+	<%= @recipe.video.html_safe %>
 	<%= image_tag @recipe.image_url(:thumb).to_s%>
 	<%= @recipe.description %>
+	<%= @recipe.prep_time %>
+	<%= @recipe.missed_time %>
+	<%= @recipe.total_time %>
 	<h2>List of Ingredients </h2>
 	<% @recipe.ingredients.each do |ingredient| %>
 		<ul>
