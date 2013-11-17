@@ -1,13 +1,16 @@
 class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
+  layout "recipe_layout", only: [:show, :index]
   def index
+    
     @recipes = Recipe.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @recipes }
     end
+   
   end
 
   # GET /recipes/1

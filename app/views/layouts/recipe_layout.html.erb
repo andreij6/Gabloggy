@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gablogger</title>
+  <%= stylesheet_link_tag    "bootstrap.css","normalize.css","r_custom.css", :media => "all" %>
+  <%= javascript_include_tag "jquery.js","bootstrap.js" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+		<%= yield %>
+	</div>
+	<footer>
+		Footer Info here
+	</footer>
+
+</body>
+
+</html>

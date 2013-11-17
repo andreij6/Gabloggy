@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 	<h1><%= @recipe.title%></h1>
-	<%= @recipe.video.html_safe %>
+	<div class="col-xs-12 video"><%= videoConversion(@recipe.video).html_safe %></div>
 	<%= image_tag @recipe.image_url(:thumb).to_s%>
 	<%= @recipe.description %>
 	<%= @recipe.prep_time %>
