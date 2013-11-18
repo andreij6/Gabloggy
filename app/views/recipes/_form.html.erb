@@ -1,3 +1,4 @@
+<% difficulty = ['easy', 'moderate', 'hard']%>
 <%= simple_form_for(@recipe, html: {multipart: true})  do |f| %>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
@@ -12,9 +13,11 @@
   <% end %>
   	<%= f.input :title%>
   	<%= f.input :description %>
+  	<%= f.input :difficulty, :collection => difficulty, :default => difficulty[0]%>
   	<%= f.input :prep_time %>
   	<%= f.input :missed_time %>
   	<%= f.input :total_time %>
+  	<%= f.input :tip %>
   	<%= f.input :video %>
 	<%= f.file_field :image%>
 	<%= f.label :remote_image_url, "or image URL"%>

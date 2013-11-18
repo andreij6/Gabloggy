@@ -15,6 +15,9 @@
 	<%= f.input :unit%>
 	<%= f.input :quantity%>
 	<%= f.text_area :description%>
+	<%= f.file_field :image%>
+	<%= f.label :remote_image_url, "or image URL"%>
+	<%= f.text_field :remote_image_url %>
   <div class="actions">
     <%= f.button :submit %>
   </div>

@@ -15,6 +15,7 @@
 	<% @recipe.steps.each do |step|%>
 		<p> Step <%= step.step_no %> </p>
 		<p><%= step.description %></p>
+		<p><%= image_tag step.image_url(:thumb).to_s%></p>
 		<%= link_to  "Add New Ingredient to Step", new_step_ingredient_path(step)%><br />
 	<% end %>
 	<%= link_to 'New Step', new_recipe_step_path(@recipe)%><br />
