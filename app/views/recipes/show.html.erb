@@ -1,25 +1,57 @@
-<p id="notice"><%= notice %></p>
+<% if notice%>
+<p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+</header>
+<div class="container">
+	<div class="jumbotron">
 	<h1><%= @recipe.title%></h1>
-	<div class="col-xs-12 video"><%= videoConversion(@recipe.video).html_safe %></div>
-	<%= image_tag @recipe.image_url(:thumb).to_s%>
-	<%= @recipe.description %>
-	<%= @recipe.prep_time %>
-	<%= @recipe.missed_time %>
-	<%= @recipe.total_time %>
-	<h2>List of Ingredients </h2>
-	<% @recipe.ingredients.each do |ingredient| %>
-		<ul>
-			<li><%= ingredient.name %> include the measures </li>
-		</ul>
-	<% end%>
-	<% @recipe.steps.each do |step|%>
-		<p> Step <%= step.step_no %> </p>
-		<p><%= step.description %></p>
-		<p><%= image_tag step.image_url(:thumb).to_s%></p>
-		<%= link_to  "Add New Ingredient to Step", new_step_ingredient_path(step)%><br />
-	<% end %>
-	<%= link_to 'New Step', new_recipe_step_path(@recipe)%><br />
-	<%= link_to 'Edit', edit_recipe_path(@recipe) %>	|
-    <%= button_to "destroy", @recipe, :method => :delete %>  |
-	<%= link_to 'Back', recipes_path %>
+	
+		
+			<% if @recipe.video.empty?%>
+				<%= image_tag @recipe.image_url(:thumb).to_s, :class => "video_replace"%>
+			<% else%>
+				
+				<%= videoConversion(@recipe.video).html_safe %>
+				
+			<% end %>
+		
+	
+				<h2>Description</h2>
+				<p><%= @recipe.description %></p>
+			
+		</div>
+		<div class="col-md-6">
+			<ul>
+				<li>Prep Time: <%= @recipe.prep_time %></li>
+				<li>Missed Time: <%= @recipe.missed_time %></li>
+				<li>Total:<%= @recipe.total_time %></li>
+			</ul>
+		
+		<h2>List of Ingredients </h2>
+		<% @recipe.ingredients.each do |ingredient| %>
+			<ul>
+				<li><%= ingredient.name %> </li>
+			</ul>
+		<% end%>
+		
+		<% @recipe.steps.each do |step|%>
+		<article class="col-md-12 steps">
+		   <%= image_tag step.image_url(:thumb).to_s, :class => "pull-right"%>
+			<h3> Step <%= step.step_no %> </h3>
+			<p><%= step.description %></p>
+			<% step.ingredients.each do |ingre| %>
+				<aside class="pull-left">
+				<h3>What You'll need for this step</h3>
+				<p> <%= ingre.name %> </p>
+				</aside>
+			<% end%>
+			<%= link_to  "Add New Ingredient to Step", new_step_ingredient_path(step)%><br />
+		</article>
+		<% end %>
+		<%= link_to 'New Step', new_recipe_step_path(@recipe)%><br />
+		<%= link_to 'Edit', edit_recipe_path(@recipe) %>	|
+	    <%= link_to "destroy", @recipe, :method => :delete %>  |
+		<%= link_to 'Back', recipes_path %>
+	</div>
+	
 

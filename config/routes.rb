@@ -6,6 +6,7 @@ Gablogger::Application.routes.draw do
 
   resources :current_events, :path => "events"
 
+  match "/recipes/latest" => "recipes#latest"
 
   resources :teches, :path => "tech"
 

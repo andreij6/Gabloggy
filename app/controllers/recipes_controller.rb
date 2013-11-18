@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
-  layout "recipe_layout", only: [:show, :index]
+  layout "recipe_layout", only: [:show, :index, :latest]
   def index
     
     @recipes = Recipe.all
@@ -11,6 +11,16 @@ class RecipesController < ApplicationController
       format.json { render json: @recipes }
     end
    
+  end
+  
+  def latest
+    @recipes = Recipe.find(:all, :order => 'created_at')
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @recipes }
+    end
+    
   end
 
   # GET /recipes/1

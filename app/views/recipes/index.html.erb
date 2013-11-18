@@ -1,16 +1,52 @@
-<h1>Recipies</h1>
-
-
-<% @recipes.each do |recipe| %>
- 
-    <h2><%= link_to recipe.title, recipe %></h2><br/>
-    <%= recipe.description %>
-    <%= image_tag recipe.image_url(:thumb).to_s%>
-    
-  
-<% end %>
-
-
-<br />
-
-<%= link_to 'New Recipe', new_recipe_path %>
+<% r = Random.new %>	
+<% num = r.rand(0..@recipes.length-1) %>
+			<article class="container">
+				
+				<div class="col-md-8">
+				<h1><%= @recipes[num].title %><span class="badge">42 Likes</span></h1>
+				<p><%= @recipes[num].description %></p>
+				<%= link_to Recipe, @recipes[num] %>
+				</div>
+				<div class="col-md-4">
+				<%= image_tag @recipes[num].image_url(:feature).to_s, :class=>"img-responsive", :id => "feature_image"%>
+				</div>
+				
+			</article>
+		</header>
+			<% count = 0%>
+			<% @recipes.each do |recipe|%>
+			<% if count.even?%>
+				<% klass = "even"%>
+			<% else %>
+				<% klass = "odd" %>
+			<% end %>
+			<%= link_to recipe do %>
+			<section class=<%= klass%>>
+				<article class="container">
+					<div class="col-md-2">
+						
+						<%= image_tag recipe.image_url(:thumb).to_s, :class=>"img-responsive pull-left img_list"%>
+						
+					</div>
+					
+					<h1>
+						<%= recipe.title %>
+					</h1>
+					<h4 class="pull-right">Skill Level: 
+						<% if recipe.difficulty == "hard"%>
+							<span class="glyphicon glyphicon-header"></span>
+						<% else%>
+							<span class="glyphicon glyphicon-thumbs-up"></span>
+						<% end %>
+					</h2>
+					<p><%= recipe.description[0..75] %>...</p>
+					
+				</article>
+			</section>
+			<% end %>
+			<% count += 1%>
+			<% end %>
+			
+			<%= link_to 'New Recipe', new_recipe_path %>
+		
+	</div>
