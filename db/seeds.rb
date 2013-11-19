@@ -9,7 +9,6 @@
 
 recipes = Recipe.create(
                       [{title: "California Chicken",
-                        recipe_id: 1,
                         description: "short description",
                         tip: "no tips",
                         prep_time: "5",
@@ -18,7 +17,6 @@ recipes = Recipe.create(
                         difficulty: "hard",
                         category: "chicken"},
                         {title: "Jerk Chicken",
-                        recipe_id: 2,
                         description: "short description",
                         tip: "no tips",
                         prep_time: "5",
@@ -27,7 +25,6 @@ recipes = Recipe.create(
                         difficulty: "hard",
                         category: "chicken"},
                         {title: "Beef Stew",
-                        recipe_id: 3,
                         description: "short description",
                         tip: "no tips",
                         prep_time: "5",
