@@ -7,29 +7,3 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-recipes = Recipe.create(
-                      [{title: "California Chicken",
-                        description: "short description",
-                        tip: "no tips",
-                        prep_time: "5",
-                        missed_time: "10",
-                        total_time: "15",
-                        difficulty: "hard",
-                        category: "chicken"},
-                        {title: "Jerk Chicken",
-                        description: "short description",
-                        tip: "no tips",
-                        prep_time: "5",
-                        missed_time: "10",
-                        total_time: "15",
-                        difficulty: "hard",
-                        category: "chicken"},
-                        {title: "Beef Stew",
-                        description: "short description",
-                        tip: "no tips",
-                        prep_time: "5",
-                        missed_time: "10",
-                        total_time: "15",
-                        difficulty: "hard",
-                        category: "beef"}
-                        ])   
