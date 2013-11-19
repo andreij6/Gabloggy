@@ -143,6 +143,7 @@ header article p {
 	color: #2ECC71;
 }
 
+
 a {
 	color: #BDC3C7;
 	text-decoration: none;
@@ -157,9 +158,36 @@ a:hover {
 	margin: 18px auto;
 }
 
-.foot8 {
-	background: #D35400;
+footer {
+	height: 75px;
 }
+
+.foot8 {
+	height: 100%;
+	background: #D35400;
+	-moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+}
+
 .foot4 {
+	height: 100%;
 	background: #e67e22;
 }
+
+.chicken {
+	border-top: 1px solid #2ECC71;
+}
+
+.poultry{
+	border-top: 1px solid #e67e22;
+}
+
+.beef {
+	border-top: 1px solid #c0392b;
+}
+
+.seafood {
+	border-top: 1px solid #6CBFEE;
+}
+

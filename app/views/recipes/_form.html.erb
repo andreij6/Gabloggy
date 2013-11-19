@@ -1,5 +1,5 @@
 <% difficulty = ['easy', 'moderate', 'hard']%>
-<% category = ['chicken','beef','poulty','seafood']%>
+<% category = ['chicken','beef','poultry','seafood']%>
 <%= simple_form_for(@recipe, html: {multipart: true})  do |f| %>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
@@ -27,7 +27,7 @@
   	<%= f.input :missed_time, :label => false, input_html: { class: "form-control" }, :placeholder =>"Missed Time" %>
   	<%= f.input :total_time, :label => false, input_html: { class: "form-control" }, :placeholder =>"Total Time" %>
   	</div>
-  	<%= f.input :tip , input_html: {class: "form-control", rows:"8"}, :placeholder =>"How to make the meal even better!"%>
+  	<%= f.input :tip , input_html: {class: "form-control", rows:"8"}, :placeholder =>"How to make the "%>
   	<div class="col-md-6">
   	<%= f.input :video , :label => false, input_html: { class: "form-control" }, :placeholder =>"Video" %>
 	</div>

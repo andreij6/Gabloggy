@@ -22,13 +22,14 @@
 			      <span class="icon-bar"></span>
 			    </button>
 			    <%= link_to 'Site Name',root_path,  :class=> "navbar-brand"%>
+			    <%= form_tag recipes_path, :class=>"navbar-form navbar-left", :method => 'get' do%>
+				  <div class="form-group">
+				    <%= text_field_tag :search, params[:search], :class=>"form-control", :placeholder=>"Search" %>
+				  </div>
+				  <%= submit_tag "Search", :class=>"btn btn-default", :name => nil%>
+				<% end %>
 			  </div>
-				<form class="navbar-form navbar-left" role="search">
-			      <div class="form-group">
-			        <input type="text" class="form-control" placeholder="Recipe Search">
-			      </div>
-			      <button type="submit" class="btn btn-default">GO</button>
-			    </form>
+				
 			  <!-- Collect the nav links, forms, and other content for toggling -->
 			  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    <ul class="nav navbar-nav navbar-right">
@@ -47,12 +48,15 @@
 			  </div><!-- /.navbar-collapse -->
 			</nav>
 		</div>
-			<p class="notice"><%= notice%></p>
+			<% if notice%>
+				<div class=" container alert alert-danger"><%= notice%></div>
+			<% else %>
+				<p class="notice"><%= notice%></p>
+			<% end %>
 		<%= yield %>
 		<footer>
 			<div class="col-xs-8 foot8">
-			<h3>Site Name</h3>
-			<ul>
+			<ul class="nav nav-tabs nav-justified">
 				<li><%= link_to "Recipes", recipes_path %></li>
 				<li><%= link_to "Fitness", fitnesses_path %></li>
 				<li><%= link_to "Tech", teches_path %></li>
@@ -60,7 +64,7 @@
 			</ul>
 			</div>
 			<div class="col-xs-4 foot4">
-				that is it
+				<h4>Site Name &copy; <%= Time.now.year %></h4>
 			</div>
 		</footer>
 			

@@ -6,6 +6,4 @@ module RecipesHelper
    video
  end
  
- 
- 
 end

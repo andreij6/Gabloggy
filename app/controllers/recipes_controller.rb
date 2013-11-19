@@ -4,7 +4,17 @@ class RecipesController < ApplicationController
   layout "recipe_layout"
   def index
     
-    @recipes = Recipe.find_with_reputation(:likes, :all, order: "likes desc" )
+      if params[:search]
+        @recipes  = Recipe.find(:all, :conditions => ['title LIKE ?', "%#{params[:search]}%"])
+        if @recipes.length == 0
+          flash[:notice] = "Sorry we couldnt find what you were looking for"
+          @recipes = Recipe.find_with_reputation(:likes, :all, order: "likes desc" )
+        end
+      else
+        @recipes = Recipe.find_with_reputation(:likes, :all, order: "likes desc" )
+      end
+    
+      
 
     respond_to do |format|
       format.html # index.html.erb
