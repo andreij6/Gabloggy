@@ -9,5 +9,5 @@
 
 recipes = Recipe.create(
                       [{title: "California Chicken"},
-                        {name: "Meatballs" },
+                        {title: "Meatballs" },
                         {title: "Fish and Chips"}])   
