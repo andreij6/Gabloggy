@@ -1,8 +1,6 @@
 Gablogger::Application.routes.draw do
  
-
-  
-
+  devise_for :users
 
   resources :current_events, :path => "events"
 
@@ -15,6 +13,7 @@ Gablogger::Application.routes.draw do
   
 
   resources :recipes do
+    member {post :like }
     resources :steps, :shallow => true, :except => :index do
       resources :ingredients, :shallow => true
     end

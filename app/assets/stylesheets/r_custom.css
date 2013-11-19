@@ -36,6 +36,11 @@ header {
 
 .video {
 	height: 500px;
+	width: 700px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
 }
 
 header article h1 {
@@ -98,10 +103,63 @@ header article p {
 }
 
 .video_replace {
-	width: 25%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
 }
 
 .steps {
 	margin: 50px auto;
 	padding: 20px;
+}
+
+.showgradient {
+		background-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			color-stop(0, #2C3E50),
+			color-stop(1, #010405)
+		);
+		background-image: -o-linear-gradient(bottom, #2C3E50 0%, #010405 100%);
+		background-image: -moz-linear-gradient(bottom, #2C3E50 0%, #010405 100%);
+		background-image: -webkit-linear-gradient(bottom, #2C3E50 0%, #010405 100%);
+		background-image: -ms-linear-gradient(bottom, #2C3E50 0%, #010405 100%);
+		background-image: linear-gradient(to bottom, #2C3E50 0%, #010405 100%);
+		color: #D0D0D0;
+		padding-bottom: 15px;
+}
+
+.showgradient h1 {
+	font-size: 4em;
+}
+
+.glyphicon-chevron-down {
+	color: red;
+}
+
+.glyphicon-chevron-up {
+	color: #2ECC71;
+}
+
+a {
+	color: #BDC3C7;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #222222;
+	text-decoration: none;
+}
+
+.form input { 
+	margin: 18px auto;
+}
+
+.foot8 {
+	background: #D35400;
+}
+.foot4 {
+	background: #e67e22;
 }

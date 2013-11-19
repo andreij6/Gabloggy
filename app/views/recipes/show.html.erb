@@ -2,11 +2,9 @@
 <p id="notice" class="alert alert-info"><%= notice %></p>
 <% end %>
 </header>
-<div class="container">
-	<div class="jumbotron">
-	<h1><%= @recipe.title%></h1>
-	
-		
+	<div class="showgradient">
+	<section class="container">
+		<div class="video col-md-9">
 			<% if @recipe.video.empty?%>
 				<%= image_tag @recipe.image_url(:thumb).to_s, :class => "video_replace"%>
 			<% else%>
@@ -14,13 +12,16 @@
 				<%= videoConversion(@recipe.video).html_safe %>
 				
 			<% end %>
-		
-	
-				<h2>Description</h2>
-				<p><%= @recipe.description %></p>
-			
 		</div>
+	<h1><%= @recipe.title%></h1>
+	<h2>Description</h2>
+	<p><%= @recipe.description %></p>
+			
+		</section>
+	</div>
+		<div class="container">
 		<div class="col-md-6">
+						
 			<ul>
 				<li>Prep Time: <%= @recipe.prep_time %></li>
 				<li>Missed Time: <%= @recipe.missed_time %></li>

@@ -1,10 +1,10 @@
 class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
-  layout "recipe_layout", only: [:show, :index, :latest]
+  layout "recipe_layout"
   def index
     
-    @recipes = Recipe.all
+    @recipes = Recipe.find_with_reputation(:likes, :all, order: "likes desc" )
 
     respond_to do |format|
       format.html # index.html.erb
@@ -94,5 +94,12 @@ class RecipesController < ApplicationController
       format.html { redirect_to recipes_url }
       format.json { head :no_content }
     end
+  end
+  
+  def like
+    value = params[:type] == "up" ? 1: -1
+    @recipe = Recipe.find(params[:id])
+    @recipe.add_or_update_evaluation(:likes, value, current_user)
+    redirect_to :back, notice: "Thankyou for voting"
   end
 end

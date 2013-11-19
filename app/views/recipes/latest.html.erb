@@ -2,7 +2,16 @@
 			<article class="container">
 				
 				<div class="col-md-8">
-				<h1><%= @recipes[num].title %><span class="badge">42 Likes</span></h1>
+				<h1><%= @recipes[num].title %>
+					<small>
+					<%= link_to like_recipe_path(@recipes[num], type: "up"), method: "post" do %>
+						<span class ="glyphicon glyphicon-chevron-up"></span>
+						<% end %>
+						<%= link_to like_recipe_path(@recipes[num], type: "down"), method: "post" do %>
+						<span class ="glyphicon glyphicon-chevron-down"></span>
+						<% end %>
+					</small>
+				</h1>
 				<p><%= @recipes[num].description %></p>
 				<%= link_to Recipe, @recipes[num] %>
 				</div>

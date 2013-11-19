@@ -2,12 +2,15 @@
 <html>
 <head>
   <title>Gablogger</title>
-  <%= stylesheet_link_tag    "bootstrap.css","normalize.css","r_custom.css", :media => "all" %>
-  <%= javascript_include_tag "jquery.js","bootstrap.js" %>
+  <!--<%= stylesheet_link_tag    "bootstrap.css","normalize.css","r_custom.css", :media => "all" %>
+  <%= javascript_include_tag "jquery.js","bootstrap.js" %>-->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<header>
+	
 		<div class="container">
 			<nav class="navbar" role="navigation">
 			  <!-- Brand and toggle get grouped for better mobile display -->
@@ -18,7 +21,7 @@
 			      <span class="icon-bar"></span>
 			      <span class="icon-bar"></span>
 			    </button>
-			    <a class="navbar-brand" href="#">Site Name</a>
+			    <%= link_to 'Site Name',root_path,  :class=> "navbar-brand"%>
 			  </div>
 				<form class="navbar-form navbar-left" role="search">
 			      <div class="form-group">
@@ -29,19 +32,37 @@
 			  <!-- Collect the nav links, forms, and other content for toggling -->
 			  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    <ul class="nav navbar-nav navbar-right">
+			    	<% if user_signed_in? %>
+			    		<li>Logged in as: <%= current_user.email %></li>
+			    		<li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+			    		<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+			    	<% else %>
+			    		<li><%= link_to "Sign up", new_user_registration_path %></li>
+			    		<li><%= link_to "Login", new_user_session_path %></li> 
+			    	<% end %>
 			      <li><%= link_to 'Top Recipes', recipes_path%></li>
 			      <li><%= link_to 'Latest', recipes_latest_path%></li>
 			      <li><a href="#">I'm Feeling Lucky</a></li>		  
 			    </ul>
 			  </div><!-- /.navbar-collapse -->
 			</nav>
-			
-			<hgroup>
-				<h1>Gabby's Favorite Recipes</h1>
-			</hgroup>
 		</div>
-	
+			<p class="notice"><%= notice%></p>
 		<%= yield %>
+		<footer>
+			<div class="col-xs-8 foot8">
+			<h3>Site Name</h3>
+			<ul>
+				<li><%= link_to "Recipes", recipes_path %></li>
+				<li><%= link_to "Fitness", fitnesses_path %></li>
+				<li><%= link_to "Tech", teches_path %></li>
+				<li><%= link_to "Events", current_events_path %></li>
+			</ul>
+			</div>
+			<div class="col-xs-4 foot4">
+				that is it
+			</div>
+		</footer>
 			
 	
 
