@@ -8,6 +8,31 @@
 
 
 recipes = Recipe.create(
-                      [{title: "California Chicken"},
-                        {title: "Meatballs" },
-                        {title: "Fish and Chips"}])   
+                      [{title: "California Chicken",
+                        recipe_id: 1,
+                        description: "short description",
+                        tip: "no tips",
+                        prep_time: "5",
+                        missed_time: "10",
+                        total_time: "15",
+                        difficulty: "hard",
+                        category: "chicken"},
+                        {title: "Jerk Chicken",
+                        recipe_id: 2,
+                        description: "short description",
+                        tip: "no tips",
+                        prep_time: "5",
+                        missed_time: "10",
+                        total_time: "15",
+                        difficulty: "hard",
+                        category: "chicken"},
+                        {title: "Beef Stew",
+                        recipe_id: 3,
+                        description: "short description",
+                        tip: "no tips",
+                        prep_time: "5",
+                        missed_time: "10",
+                        total_time: "15",
+                        difficulty: "hard",
+                        category: "beef"}
+                        ])   
