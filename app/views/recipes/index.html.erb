@@ -30,36 +30,36 @@
 				<% klass = "odd" %>
 			<% end %>
 			<%= link_to recipe do %>
-			<section class='<%= recipe.category%> <%= klass%>'>
-				<article class="container">
-					<div class="col-md-2">
+				<section class='<%= recipe.category%> <%= klass%>'>
+					<article class="container">
+						<div class="col-md-2">
+							
+							<%= image_tag recipe.image_url(:thumb).to_s, :class=>"img-responsive pull-left img_list"%>
+							
+							
+						</div>
 						
-						<%= image_tag recipe.image_url(:thumb).to_s, :class=>"img-responsive pull-left img_list"%>
+						<h1>
+							<%= recipe.title %> 
+						</h1>
+						<h4 class="pull-right">Skill Level: 
+							<% if recipe.difficulty == "hard"%>
+								<span class="glyphicon glyphicon-header"></span>
+							<% else%>
+								<span class="glyphicon glyphicon-thumbs-up"></span>
+							<% end %>
+						</h4>
+						<p><%= recipe.description[0..75] %>...</p>
+						<%= recipe.reputation_for(:likes).to_i %>
 						
-						
-					</div>
-					
-					<h1>
-						<%= recipe.title %> 
-					</h1>
-					<h4 class="pull-right">Skill Level: 
-						<% if recipe.difficulty == "hard"%>
-							<span class="glyphicon glyphicon-header"></span>
-						<% else%>
-							<span class="glyphicon glyphicon-thumbs-up"></span>
-						<% end %>
-					</h4>
-					<p><%= recipe.description[0..75] %>...</p>
-					<%= recipe.reputation_for(:likes).to_i %>
-					
-						<%= link_to like_recipe_path(recipe, type: "up"), method: "post" do %>
-							<span class ="glyphicon glyphicon-chevron-up"></span>
-						<% end %>
-						<%= link_to like_recipe_path(recipe, type: "down"), method: "post" do %>
-						<span class ="glyphicon glyphicon-chevron-down"></span>
-						<% end %>
-						
-				</article>
+							<%= link_to like_recipe_path(recipe, type: "up"), method: "post" do %>
+								<span class ="glyphicon glyphicon-chevron-up"></span>
+							<% end %>
+							<%= link_to like_recipe_path(recipe, type: "down"), method: "post" do %>
+							<span class ="glyphicon glyphicon-chevron-down"></span>
+							<% end %>
+							
+					</article>
 			</section>
 			<% end %>
 			<% count += 1%>

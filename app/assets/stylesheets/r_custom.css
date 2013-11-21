@@ -8,6 +8,16 @@ header {
 	
 }
 
+.one { 
+	height: 20em;
+}
+
+.picture {
+	height: 100%;
+	top: 35%;
+	text-align: center;
+}
+
 .badge {
 	background: #D35400;
 }

@@ -1,21 +1,70 @@
-
-<header>
-	<hgroup>
-		<h1>
-			Gablogger
-		</h1>
-	</hgroup><hr />
+<header class="jumbotron">
+  <h1>Hello, world!</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
 </header>
-<section>
-	<h1>Section heading</h1>
-	<p>Find me in app/views/welcome/index.html.erb</p>
-</section>
-<section>
-	<h1>Section heading</h1>
-	<p>Find me in app/views/welcome/index.html.erb</p>
-</section>
-<section>
-	<h1>Section heading</h1>
-	<p>Find me in app/views/welcome/index.html.erb</p>
+
+<section class="row one well">
+	<div class="col-xs-6">
+		<h1>Recipes <span class="badge"><%= @recipes.count %></span></h1>
+		<h2><%= @recipes[-1].title %></h2>
+		<p><%= @recipes[-1].description %></p>
+	</div>
+	<div class="col-xs-6 picture">
+		<%= link_to recipes_path do%>
+		<h3>Check out more Recipes
+			
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</h3>
+		<% end %>
+		
+	</div>
 </section>
 
+<section class="row one well">
+	<div class="col-xs-6">
+		<h1>Fitness Articles <span class="badge"><%= @fits.count %></span></h1>
+		<h2>Fitness</h2>
+		<p>Body</p>
+	</div>
+	<div class="col-xs-6 picture">
+		<%= link_to fitnesses_path do%>
+		<h3>Check out more Fitness Articles
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</h3>
+		<% end %>
+		
+	</div>
+</section>
+
+<section class="row one well">
+	<div class="col-xs-6">
+		<h1>Tech Articles <span class="badge"><%= @techs.count %></span></h1>
+		<h2>Title</h2>
+		<p>Body</p>
+	</div>
+	<div class="col-xs-6 picture">
+		<%= link_to teches_path do%>
+		<h3>Tech
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</h3>
+		<% end %>
+		
+	</div>
+</section>
+
+<section class="row one well">
+	<div class="col-xs-6">
+		<h1>Current Events <span class="badge"><%= @events.count %></span></h1>
+		<h2>Title</h2>
+		<p>Body</p>
+	</div>
+	<div class="col-xs-6 picture">
+		<%= link_to current_events_path do%>
+		<h3>Current Events
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</h3>
+		<% end %>
+		
+	</div>
+</section>
