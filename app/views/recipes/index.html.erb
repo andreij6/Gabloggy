@@ -1,4 +1,3 @@
-
 	<% r = Random.new %>	
 	<% num = r.rand(0..@recipes.length-1) %>
 	<% while @recipes[num].reputation_for(:likes).to_i < 0 %>
@@ -50,15 +49,15 @@
 							<% end %>
 						</h4>
 						<p><%= recipe.description[0..75] %>...</p>
-						<%= recipe.reputation_for(:likes).to_i %>
-						
+						<span class="badge"><%= recipe.reputation_for(:likes).to_i %> Likes</span>
+						<% if user_signed_in? %>
 							<%= link_to like_recipe_path(recipe, type: "up"), method: "post" do %>
 								<span class ="glyphicon glyphicon-chevron-up"></span>
 							<% end %>
 							<%= link_to like_recipe_path(recipe, type: "down"), method: "post" do %>
 							<span class ="glyphicon glyphicon-chevron-down"></span>
 							<% end %>
-							
+						<% end %>
 					</article>
 			</section>
 			<% end %>

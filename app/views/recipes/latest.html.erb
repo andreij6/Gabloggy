@@ -3,14 +3,18 @@
 				
 				<div class="col-md-8">
 				<h1><%= @recipes[num].title %>
+					<% if user_signed_in? %>
 					<small>
+					
 					<%= link_to like_recipe_path(@recipes[num], type: "up"), method: "post" do %>
 						<span class ="glyphicon glyphicon-chevron-up"></span>
 						<% end %>
 						<%= link_to like_recipe_path(@recipes[num], type: "down"), method: "post" do %>
 						<span class ="glyphicon glyphicon-chevron-down"></span>
 						<% end %>
+					
 					</small>
+					<% end %>
 				</h1>
 				<p><%= @recipes[num].description %></p>
 				<%= link_to @recipes[num] do %>
