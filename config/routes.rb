@@ -1,5 +1,8 @@
 Gablogger::Application.routes.draw do
  
+  resources :deals
+
+
   devise_for :users
 
   resources :current_events, :path => "events"

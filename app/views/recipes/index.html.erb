@@ -3,18 +3,20 @@
 	<% while @recipes[num].reputation_for(:likes).to_i < 0 %>
 		<% num = r.rand(0..@recipes.length-1) %>
 	<% end %>
-			
+		<div class="col-md-7">
+		<header>
 			<article class="container">
 				
 				<div class="col-md-8">
-				<h1><%= @recipes[num].title %> <span class="badge">Score <%= @recipes[num].reputation_for(:likes).to_i%></span></h1>
+				<h1><%= @recipes[num].title %> </h1>
 				<p><%= markdown(@recipes[num].description) %></p>
 				<%= link_to @recipes[num] do %>
 					<em>Get this Recipe</em> <span class="glyphicon glyphicon-play"></span>
 				<% end %>
 				</div>
 				<div class="col-md-4">
-				<%= image_tag @recipes[num].image_url(:feature).to_s, :class=>"img-responsive", :id => "feature_image"%>
+					<%= image_tag @recipes[num].image_url(:feature).to_s, :class=>"img-responsive", :id => "feature_image"%>				<!-- Picture -->
+					<span class="badge">Score <%= @recipes[num].reputation_for(:likes).to_i%></span>
 				</div>
 				<%= link_to new_recipe_path  do%>
 					<span class="glyphicon glyphicon-th-large"></span>New Recipe
@@ -66,4 +68,5 @@
 			
 			
 		
+	</div>
 	</div>

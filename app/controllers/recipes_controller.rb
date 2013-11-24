@@ -1,7 +1,6 @@
 class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
-  layout "recipe_layout"
   def index
     
       if params[:search]
