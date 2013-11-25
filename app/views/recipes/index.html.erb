@@ -8,7 +8,7 @@
 			<article class="container">
 				
 				<div class="col-md-8">
-				<h1><%= @recipes[num].title %> </h1>
+				<h1><%= @recipes[num].title %> </h1><hr />
 				<p><%= markdown(@recipes[num].description) %></p>
 				<%= link_to @recipes[num] do %>
 					<em>Get this Recipe</em> <span class="glyphicon glyphicon-play"></span>
@@ -16,22 +16,18 @@
 				</div>
 				<div class="col-md-4">
 					<%= image_tag @recipes[num].image_url(:feature).to_s, :class=>"img-responsive", :id => "feature_image"%>				<!-- Picture -->
-					<span class="badge">Score <%= @recipes[num].reputation_for(:likes).to_i%></span>
+					
 				</div>
 				<%= link_to new_recipe_path  do%>
 					<span class="glyphicon glyphicon-th-large"></span>New Recipe
 				<% end %>
 			</article>
 		</header>
-			<% count = 0%>
+			
 			<% @recipes.each do |recipe|%>
-			<% if count.even?%>
-				<% klass = "even"%>
-			<% else %>
-				<% klass = "odd" %>
-			<% end %>
+			
 			<%= link_to recipe do %>
-				<section class='<%= recipe.category%> <%= klass%>'>
+				<section class='<%= recipe.category%> even'>
 					<article class="container">
 						<div class="col-md-2">
 							
@@ -42,16 +38,11 @@
 						
 						<h1>
 							<%= recipe.title %> 
+							<span class="badge"><%= recipe.reputation_for(:likes).to_i %> Likes</span>
 						</h1>
-						<h4 class="pull-right">Skill Level: 
-							<% if recipe.difficulty == "hard"%>
-								<span class="glyphicon glyphicon-header"></span>
-							<% else%>
-								<span class="glyphicon glyphicon-thumbs-up"></span>
-							<% end %>
-						</h4>
-						<p><%= recipe.description[0..75] %>...</p>
-						<span class="badge"><%= recipe.reputation_for(:likes).to_i %> Likes</span>
+						
+						<p class="col-md-6"><%= recipe.description %></p>
+						
 						<% if user_signed_in? %>
 							<%= link_to like_recipe_path(recipe, type: "up"), method: "post" do %>
 								<span class ="glyphicon glyphicon-chevron-up"></span>
@@ -63,7 +54,6 @@
 					</article>
 			</section>
 			<% end %>
-			<% count += 1%>
 			<% end %>
 			
 			
