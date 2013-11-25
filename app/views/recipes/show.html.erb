@@ -1,6 +1,5 @@
 
 </header>
-	<div class="showgradient">
 	<section class="container">
 		<div class="video col-md-9">
 			<% if @recipe.video.empty?%>
@@ -16,7 +15,6 @@
 	<p><%= markdown(@recipe.description) %></p>
 			
 		</section>
-	</div>
 		<div class="container">		
 			<ul>
 				<li>Prep Time: <%= @recipe.prep_time %></li>
