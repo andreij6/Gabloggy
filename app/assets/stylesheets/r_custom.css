@@ -20,6 +20,10 @@ header {
 	padding-bottom: 50px;
 }
 
+ul {
+	list-style-type: none;
+}
+
 .one { 
 	height: 20em;
 }
@@ -45,13 +49,8 @@ header {
 	margin-left: 25px;
 	margin-top: 25px;
 	margin-bottom: 25px;
-	height: 300px;
-	width: auto;
-	-webkit-border-radius: 0px 10px 0px 0px; 
-	 /* Firefox 1-3.6 */
-	 -moz-border-radius: 0px 10px 0px 0px; 
-	 /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
-	 border-radius: 0px 10px 0px 0px;
+	height: auto;
+	width: 300px;
 }
 
 
@@ -171,6 +170,7 @@ a:hover {
 
 footer {
 	height: 75px;
+	color: lightgrey;
 }
 .nav-stacked {
 	margin-top: 250px;
@@ -178,7 +178,7 @@ footer {
 }
 .foot8 {
 	height: 100%;
-	background: #D35400;
+	background: #C0392B;
 	-moz-box-shadow:    inset 0 0 10px #000000;
    -webkit-box-shadow: inset 0 0 10px #000000;
    box-shadow:         inset 0 0 10px #000000;
@@ -186,7 +186,7 @@ footer {
 
 .foot4 {
 	height: 100%;
-	background: #e67e22;
+	background: #333;
 }
 
 .chicken {

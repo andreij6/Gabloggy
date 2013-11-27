@@ -3,7 +3,7 @@
 	<% while @recipes[num].reputation_for(:likes).to_i < 0 %>
 		<% num = r.rand(0..@recipes.length-1) %>
 	<% end %>
-		<div class="col-md-7">
+		
 		<header>
 			<article class="container">
 				
@@ -41,7 +41,7 @@
 							<span class="badge"><%= recipe.reputation_for(:likes).to_i %> Likes</span>
 						</h1>
 						
-						<p class="col-md-6"><%= recipe.description %></p>
+						<p><%= recipe.description %></p>
 						
 						<% if user_signed_in? %>
 							<%= link_to like_recipe_path(recipe, type: "up"), method: "post" do %>
@@ -58,5 +58,5 @@
 			
 			
 		
-	</div>
-	</div>
+	
+	

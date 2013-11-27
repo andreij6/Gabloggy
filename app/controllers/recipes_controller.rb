@@ -109,6 +109,6 @@ class RecipesController < ApplicationController
     value = params[:type] == "up" ? 1: -1
     @recipe = Recipe.find(params[:id])
     @recipe.add_or_update_evaluation(:likes, value, current_user)
-    redirect_to :back, notice: "Thankyou for voting"
+    redirect_to :back, notice: "Thank you for voting"
   end
 end

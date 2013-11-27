@@ -18,7 +18,7 @@
 		<div class="container">		
 			<ul>
 				<li>Prep Time: <%= @recipe.prep_time %></li>
-				<li>Missed Time: <%= @recipe.missed_time %></li>
+				<li>Hidden Time: <%= @recipe.missed_time %></li>
 				<li>Total:<%= @recipe.total_time %></li>
 			</ul>
 			<h2>List of Ingredients </h2>
@@ -65,7 +65,7 @@
 	
 	<% @recipe.steps.each do |step|%>
 		   <% if step.image_url(:thumb) %>
-		<div class="container">
+		
 		  <div class="col-sm-6 col-md-4">
 		  	
 		    <div class="thumbnail">
@@ -76,7 +76,7 @@
 		      
 		    </div>
 		  </div>
-		</div>
+		
 		<% end %>
 		<% end %>
 		
@@ -85,3 +85,4 @@
 		<%= link_to 'Edit', edit_recipe_path(@recipe) %>	|
 	    <%= link_to "destroy", @recipe, :method => :delete %>  |
 		<%= link_to 'Back', recipes_path %>
+

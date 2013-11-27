@@ -42,14 +42,9 @@
 			  <!-- Collect the nav links, forms, and other content for toggling -->
 			  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    <ul class="nav navbar-nav navbar-right">
-			    	<% if user_signed_in? %>
-			    		<li>Logged in as: <%= current_user.email %></li>
-			    		<li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-			    		<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-			    	<% else %>
-			    		<li><%= link_to "Sign up", new_user_registration_path %></li>
-			    		<li><%= link_to "Login", new_user_session_path %></li> 
-			    	<% end %>
+			    	<li><%= link_to 'Fitness', fitnesses_path%></li>
+			    	<li><%= link_to 'Current Events', current_events_path%></li>
+			      <li><%= link_to 'Tech', teches_path%></li>
 			      <li><%= link_to 'Top Recipes', recipes_path%></li>
 			      <li><%= link_to 'Latest', recipes_latest_path%></li>	  
 			    </ul>
@@ -58,7 +53,7 @@
 	</section>
 		<p class="notice"><%= notice%></p>
 		<p class="alert"><%= alert%></p>
-		<%= yield %>
+		<div class="col-md-7"><%= yield %></div>
 	<aside class="col-md-2">
 		<h1>Advertisements</h1>
 		 <img data-src="holder.js/100%x180" alt="..."><br />
@@ -69,15 +64,10 @@
 	
 	<footer>
 			<div class="col-xs-8 foot8">
-			<ul class="nav nav-tabs nav-justified">
-				<li><%= link_to "Recipes", recipes_path %></li>
-				<li><%= link_to "Fitness", fitnesses_path %></li>
-				<li><%= link_to "Tech", teches_path %></li>
-				<li><%= link_to "Events", current_events_path %></li>
-			</ul>
+				<h4>Corner Label &copy; <%= Time.now.year %></h4>
 			</div>
 			<div class="col-xs-4 foot4">
-				<h4>Site Name &copy; <%= Time.now.year %></h4>
+				
 			</div>
 		</footer>
 
